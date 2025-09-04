@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agente de Inventário de Eventos - Proposta Tars & Co para Woba</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header com índice clicável -->
+    <nav class="nav-header">
+        <div class="nav-logos">
+            <img src="assets/images/logo_tars.svg" alt="Tars & Co" class="logo-tars">
+            <span class="nav-divider">x</span>
+            <img src="assets/images/logo_woba.svg" alt="Woba" class="logo-woba">
+        </div>
+        <div class="nav-menu">
+            <a href="#inicio" class="nav-link">Início</a>
+            <a href="#objetivo" class="nav-link">Objetivo</a>
+            <a href="#solucao" class="nav-link">Solução</a>
+            <a href="#parte1" class="nav-link">Parte 1</a>
+            <a href="#parte2" class="nav-link">Parte 2</a>
+            <a href="#parte3" class="nav-link">Parte 3</a>
+            <a href="#riscos" class="nav-link">Riscos</a>
+            <a href="#stack" class="nav-link">Stack</a>
+            <a href="#cronograma" class="nav-link">Cronograma</a>
+            <a href="#comercial" class="nav-link">Comercial</a>
+            <a href="#contato" class="nav-link">Contato</a>
+        </div>
+    </nav>
+
+    <!-- Seção 1: Capa -->
+    <section id="inicio" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Agente de inventário de eventos</h1>
+                <p class="hero-subtitle">Proposta de trabalho para implementação de automação e agente de IA para atualizar dados de espaços de eventos da Woba</p>
+                <div class="hero-logos">
+                    <img src="assets/images/logo_tars.svg" alt="Tars & Co" class="hero-logo-tars">
+                    <span class="logo-connector">×</span>
+                    <img src="assets/images/logo_woba.svg" alt="Woba" class="hero-logo-woba">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: Objetivo do projeto -->
+    <section id="objetivo" class="objective-section">
+        <div class="container">
+            <h2 class="section-title">Objetivo do projeto</h2>
+            <div class="objective-content">
+                <div class="pain-point">
+                    <h3>Principal dor do processo</h3>
+                    <p>Ter informações dos espaços para eventos atualizadas (preços, fotos, layouts possíveis, amenidades etc).</p>
+                </div>
+                <div class="deployments">
+                    <h3>Desdobramentos</h3>
+                    <div class="deployment-list">
+                        <div class="deployment-item">
+                            <span class="deployment-number">1</span>
+                            <p>Enviar mensagem inicial para coworking a fim de confirmar dados existentes</p>
+                        </div>
+                        <div class="deployment-item">
+                            <span class="deployment-number">2</span>
+                            <p>Conversar com coworking e atualizar informações dos espaços no banco de dados</p>
+                        </div>
+                        <div class="deployment-item">
+                            <span class="deployment-number">3</span>
+                            <p>Gerar proposta para clientes comparando espaços dos coworkings</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Solução -->
+    <section id="solucao" class="solution-section">
+        <div class="container">
+            <h2 class="section-title">Solução</h2>
+            <div class="solution-parts">
+                <div class="solution-part">
+                    <div class="part-icon">📱</div>
+                    <h3>Parte 1</h3>
+                    <p>Automação de disparo de mensagem para coworkings via WhatsApp</p>
+                </div>
+                <div class="solution-part">
+                    <div class="part-icon">🤖</div>
+                    <h3>Parte 2</h3>
+                    <p>Agente de IA para conversar com coworkings, validar e coletar informações dos espaços e atualizar dados no banco</p>
+                </div>
+                <div class="solution-part">
+                    <div class="part-icon">📄</div>
+                    <h3>Parte 3</h3>
+                    <p>Geração de PDF de proposta comparativa de espaços</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Parte 1 - Automação WhatsApp -->
+    <section id="parte1" class="part1-section section solution-section">
+        <div class="container">
+            <h2 class="section-title">Parte 1: automação de disparo de mensagem para coworkings via WhatsApp</h2>
+            
+            <div class="solution-part">
+                <div class="part-header">
+                    <div class="integration-badge">
+                        <span>n8n ou CRM (atual ou open source)</span>
+                    </div>
+                </div>
+                <div class="workflow-container">
+                    <div class="workflow-steps">
+                        <div class="step-box trigger">
+                            <div class="step-title">GATILHO:</div>
+                            <div class="step-content">Mapeamento de coworkings com data de atualização superior a X</div>
+                            <div class="step-tools">
+                                <strong>FERRAMENTAS:</strong>
+                                <span>Airtable ou ERP de preferência</span>
+                            </div>
+                        </div>
+                        <div class="arrow">→</div>
+                        <div class="step-box">
+                            <div class="step-title">Disparo de mensagem via whatsapp (template Meta)</div>
+                            <div class="step-tools">
+                                <strong>FERRAMENTAS:</strong>
+                                <span>Número(s) de telefone, Templates Meta (caso utilize API oficial do WhatsApp), API WhatsApp</span>
+                            </div>
+                        </div>
+                        <div class="arrow">→</div>
+                        <div class="step-box">
+                            <div class="step-title">Atualização de ERP e banco de dados</div>
+                            <div class="step-tools">
+                                <strong>FERRAMENTAS:</strong>
+                                <span>Airtable ou ERP de preferência, Banco de dados</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Parte 2 - Agente de IA -->
+    <section id="parte2" class="part2-section section solution-section">
+        <div class="container">
+            <h2 class="section-title">Parte 2: agente de IA para conversar com coworkings, validar e coletar informações dos espaços e atualizar dados no banco</h2>
+            
+            <div class="solution-part">
+                <div class="part-header">
+                    <div class="integration-badge">
+                        <span>Tudo integrado via n8n</span>
+                    </div>
+                </div>
+                <div class="workflow-container">
+                    <div class="workflow-steps">
+                        <div class="step-box trigger">
+                            <div class="step-title">GATILHO:</div>
+                            <div class="step-content">Recebe mensagem no WhatsApp</div>
+                            <div class="step-tools">
+                                <strong>FERRAMENTAS:</strong>
+                                <span>Número(s) de telefone, API WhatsApp</span>
+                            </div>
+                        </div>
+                        <div class="arrow">→</div>
+                        <div class="step-box">
+                            <div class="step-title">Localiza coworking no ERP</div>
+                            <div class="step-tools">
+                                <strong>FERRAMENTAS:</strong>
+                                <span>Airtable ou ERP de preferência, Banco de dados</span>
+                            </div>
+                        </div>
+                        <div class="arrow">→</div>
+                        <div class="step-box">
+                            <div class="step-title">Responde mensagem de acordo com script e base de conteúdo, sempre atualizando ERP e banco de dados (texto, áudio, imagem e PDF)</div>
+                            <div class="step-tools">
+                                <strong>FERRAMENTAS:</strong>
+                                <span>Transcrição de áudio, LLM, RAG/Embeddings (a depender do tamanho da base), Airtable ou ERP de preferência, Banco de dados (memória e registro de informações)</span>
+                            </div>
+                        </div>
+                        <div class="arrow">→</div>
+                        <div class="step-box">
+                            <div class="step-title">Transfere atendimento para humano de acordo com regras</div>
+                            <div class="step-tools">
+                                <strong>FERRAMENTAS:</strong>
+                                <span>LLM (detectar intenção), Airtable ou ERP de preferência, Banco de dados</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 6: Parte 3 - Geração de PDF -->
+    <section id="parte3" class="part3-section section solution-section">
+        <div class="container">
+            <h2 class="section-title">Parte 3: geração de PDF de proposta comparativa de espaços</h2>
+            
+            <div class="solution-part">
+                <div class="part-header">
+                    <div class="integration-badge">
+                        <span>Tudo integrado via n8n</span>
+                    </div>
+                </div>
+                <div class="workflow-container">
+                    <div class="workflow-steps">
+                        <div class="step-box">
+                            <div class="step-title">Ops consulta base de dados (através de view client friendly)</div>
+                            <div class="step-tools">
+                                <strong>FERRAMENTAS:</strong>
+                                <span>Airtable</span>
+                            </div>
+                        </div>
+                        <div class="arrow">→</div>
+                        <div class="step-box trigger">
+                            <div class="step-title">GATILHO:</div>
+                            <div class="step-content">Ops preenche formulário com espaços a serem incluídos na proposta</div>
+                            <div class="step-tools">
+                                <strong>FERRAMENTAS:</strong>
+                                <span>Airtable</span>
+                            </div>
+                        </div>
+                        <div class="arrow">→</div>
+                        <div class="step-box">
+                            <div class="step-title">Espaços e respectivas informações são adicionadas a template no Google Docs (ou similar)</div>
+                            <div class="step-tools">
+                                <strong>FERRAMENTAS:</strong>
+                                <span>Google Docs</span>
+                            </div>
+                        </div>
+                        <div class="arrow">→</div>
+                        <div class="step-box">
+                            <div class="step-title">PDF é gerado a partir de template + informações dos espaços</div>
+                            <div class="step-tools">
+                                <strong>FERRAMENTAS:</strong>
+                                <span>Google Docs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 7: Principais riscos -->
+    <section id="riscos" class="risks-section">
+        <div class="container">
+            <h2 class="section-title">Principais riscos para o cronograma e desempenho da solução</h2>
+            <div class="risks-list">
+                <div class="risk-item">
+                    <div class="risk-icon">⚠️</div>
+                    <p>A IA pode cometer erros. Para identificá-los, utilizamos mecanismos de verificação (ex.: análise paralela com duas IAs). Em média, a assertividade inicial é de ~65%. Para agentes de conversa, auditorias humanas são necessárias para garantir 100% de identificação de erros.</p>
+                </div>
+                <div class="risk-item">
+                    <div class="risk-icon">📝</div>
+                    <p>Aprovação de templates WhatsApp (em caso de uso de API oficial).</p>
+                </div>
+                <div class="risk-item">
+                    <div class="risk-icon">🚫</div>
+                    <p>Banimento no WhatsApp por volume de disparos outbound (pode ocorrer independentemente do uso de API oficial).</p>
+                </div>
+                <div class="risk-item">
+                    <div class="risk-icon">🔧</div>
+                    <p>Necessidade de sanitização/construção de base de dados.</p>
+                </div>
+                <div class="risk-item">
+                    <div class="risk-icon">📞</div>
+                    <p>Aderência dos fornecedores (responderem IA).</p>
+                </div>
+                <div class="risk-item">
+                    <div class="risk-icon">⚡</div>
+                    <p>Falta de padronização entre base de dados Woba e informações provenientes dos fornecedores (p.ex preço por turno vs preço por hora).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 8: Stack tecnológico -->
+    <section id="stack" class="stack-section">
+        <div class="container">
+            <h2 class="section-title">Stack tecnológico da solução</h2>
+            <div class="stack-content">
+                <div class="stack-main">
+                    <h3>Principais ferramentas a serem utilizadas:</h3>
+                    <div class="stack-grid">
+                        <div class="stack-item">n8n</div>
+                        <div class="stack-item">WhatsApp API</div>
+                        <div class="stack-item">Número de telefone</div>
+                        <div class="stack-item">ERP</div>
+                        <div class="stack-item">Banco de dados NoSQL</div>
+                        <div class="stack-item">LLM (transcrição de áudio, respostas, embeddings, análise de imagem e PDF)</div>
+                    </div>
+                </div>
+                <div class="stack-optional">
+                    <h3>Opcional:</h3>
+                    <div class="stack-grid">
+                        <div class="stack-item optional">WhatsApp templates</div>
+                        <div class="stack-item optional">CRM (atual ou Chatwoot)</div>
+                        <div class="stack-item optional">Banco de dados SQL</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 9: Cronograma -->
+    <section id="cronograma" class="timeline-section">
+        <div class="container">
+            <h2 class="section-title">Cronograma</h2>
+            
+            <!-- Parte 1 Timeline -->
+            <div class="timeline-part">
+                <h3 class="timeline-title">Parte 1: automação de disparo de mensagem para coworkings via WhatsApp</h3>
+                <div class="timeline-phases">
+                    <div class="phase">
+                        <div class="phase-duration">2 semanas</div>
+                        <div class="phase-name">Arquitetura e operação</div>
+                        <div class="phase-activities">
+                            <p>• Desenhar arquitetura da solução esperada</p>
+                            <p>• Entender volumes de disparos diários</p>
+                            <p>• Análise de ferramentas disponíveis</p>
+                            <p>• Entender/definir stack tecnológico atual</p>
+                        </div>
+                    </div>
+                    <div class="phase">
+                        <div class="phase-duration">1 semana</div>
+                        <div class="phase-name">Setup stack tecnológico</div>
+                        <div class="phase-activities">
+                            <p>• Aquisição de API de WhatsApp escolhida</p>
+                            <p>• Construção e solicitação de templates</p>
+                            <p>• Adaptação de ERP</p>
+                            <p>• Configuração do n8n</p>
+                        </div>
+                    </div>
+                    <div class="phase">
+                        <div class="phase-duration">2 semanas</div>
+                        <div class="phase-name">Implementação</div>
+                        <div class="phase-activities">
+                            <p>• Construção da primeira versão</p>
+                            <p>• Implementação para amostra da base</p>
+                            <p>• Checkpoints de iteração semanais</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-result">
+                    <h4>Resultado</h4>
+                    <p>• Disparo automático em funcionamento</p>
+                    <p>• Mapeamento da aderência de resposta</p>
+                    <p>• Teste de diferentes templates de comunicação</p>
+                    <p>• Levantamento de exemplos de interação com coworking</p>
+                </div>
+            </div>
+
+            <!-- Parte 2 Timeline -->
+            <div class="timeline-part">
+                <h3 class="timeline-title">Parte 2: agente de IA para conversar com coworkings, validar e coletar informações dos espaços e atualizar dados no banco</h3>
+                <div class="timeline-phases">
+                    <div class="phase">
+                        <div class="phase-duration">2 semanas</div>
+                        <div class="phase-name">Arquitetura e operação</div>
+                        <div class="phase-activities">
+                            <p>• Entender casos que serão endereçados pelo agente</p>
+                            <p>• Desenhar arquitetura da solução esperada</p>
+                            <p>• Entender volumes de conversas simultâneas</p>
+                        </div>
+                    </div>
+                    <div class="phase">
+                        <div class="phase-duration">1 semana</div>
+                        <div class="phase-name">Setup stack tecnológico</div>
+                        <div class="phase-activities">
+                            <p>• Adaptação de ERP</p>
+                            <p>• Implementação/adaptação de CRM</p>
+                            <p>• Configuração de múltiplas instâncias no n8n</p>
+                        </div>
+                    </div>
+                    <div class="phase">
+                        <div class="phase-duration">3 semanas</div>
+                        <div class="phase-name">Implementação</div>
+                        <div class="phase-activities">
+                            <p>• Construção da primeira versão</p>
+                            <p>• Implementação para amostra da base</p>
+                            <p>• Checkpoints de iteração semanais</p>
+                            <p>• Construção da versão final</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-result">
+                    <h4>Resultado</h4>
+                    <p>• Agente que faz inventário de espaços de eventos e transfere atendimento quando necessário</p>
+                    <p>• Documentação técnica para permitir time Woba a realizar manutenção do agente</p>
+                </div>
+            </div>
+
+            <!-- Parte 3 Timeline -->
+            <div class="timeline-part">
+                <h3 class="timeline-title">Parte 3: geração de PDF de proposta comparativa de espaços</h3>
+                <div class="timeline-phases">
+                    <div class="phase">
+                        <div class="phase-duration">2 semanas</div>
+                        <div class="phase-name">Template</div>
+                        <div class="phase-activities">
+                            <p>• Criar visualização da base de dados para operações</p>
+                            <p>• Criar template em Google Docs com variáveis</p>
+                        </div>
+                    </div>
+                    <div class="phase">
+                        <div class="phase-duration">2 semanas</div>
+                        <div class="phase-name">Implementação</div>
+                        <div class="phase-activities">
+                            <p>• Criar formulário com dados a serem adicionados ao template</p>
+                            <p>• Criar automação (via Airtable Interfaces, n8n etc.)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-result">
+                    <h4>Resultado</h4>
+                    <p>• Ferramenta de geração de proposta conforme base de dados</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 10: Condições comerciais -->
+    <section id="comercial" class="commercial-section">
+        <div class="container">
+            <h2 class="section-title">Condições comerciais</h2>
+            <div class="commercial-note">
+                <p>Custo de sustentação, atualizações e melhorias como responsabilidade por conta da Woba</p>
+            </div>
+            <div class="commercial-scenarios">
+                <div class="scenario">
+                    <div class="scenario-header">
+                        <h3>Cenário A</h3>
+                    </div>
+                    <div class="scenario-price">
+                        <span class="price-value">R$ 69.000</span>
+                        <span class="price-description">Preço da implementação</span>
+                    </div>
+                    <div class="scenario-scope">
+                        <p>Partes 1, 2 e 3</p>
+                    </div>
+                </div>
+                <div class="scenario">
+                    <div class="scenario-header">
+                        <h3>Cenário B</h3>
+                    </div>
+                    <div class="scenario-price">
+                        <span class="price-value">R$ 10.900/mês</span>
+                        <span class="price-description">Dedicação com escopo aberto</span>
+                    </div>
+                    <div class="scenario-scope">
+                        <p>Equipe Tars & Co (engenheiro de automação + gerente part-time)</p>
+                        <p>Mínimo de dois meses de contratação</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 11: Contato -->
+    <section id="contato" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="contact-title">Obrigado</h2>
+                <div class="contact-info">
+                    <h3>Pedro Zawislak</h3>
+                    <p class="contact-email">pedro@tarscompany.com</p>
+                    <p class="contact-phone">(11) 99458-7857</p>
+                </div>
+                <div class="contact-logos">
+                    <img src="assets/images/logo_tars.svg" alt="Tars & Co" class="contact-logo-tars">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
